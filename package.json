@@ -1,0 +1,46 @@
+{
+  "name": "@hellozhang/zx-components",
+  "version": "0.0.2",
+  "description": "components",
+  "main": "es/index.js",
+  "module": "es/index.js",
+  "types": "es/index.d.ts",
+  "files": [
+    "es"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rollup -c ./rollup.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SeeTheNight/zx-components.git"
+  },
+  "keywords": [
+    "react",
+    "components",
+    "typescript",
+    "javascript"
+  ],
+  "author": {
+    "name": "Zhang X",
+    "email": "1345306401@qq.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SeeTheNight/zx-components/issues"
+  },
+  "homepage": "https://github.com/SeeTheNight/zx-components#readme",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^22.0.2",
+    "@rollup/plugin-node-resolve": "^14.1.0",
+    "@rollup/plugin-strip": "^2.1.0",
+    "@rollup/plugin-typescript": "^8.5.0",
+    "@types/react": "^18.0.21",
+    "autoprefixer": "^10.4.12",
+    "react": "^18.2.0",
+    "rollup-plugin-node-externals": "^5.0.0",
+    "rollup-plugin-postcss": "^4.0.2",
+    "tslib": "^2.4.0"
+  }
+}
