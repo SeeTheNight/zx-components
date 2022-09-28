@@ -1,0 +1,7 @@
+node_modules/
+docs/
+src/
+.fatherrc.ts
+.umirc.ts
+.tsconfig.json
+typings.d.ts

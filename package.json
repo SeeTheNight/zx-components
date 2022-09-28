@@ -1,46 +1,47 @@
 {
   "name": "@hellozhang/zx-components",
-  "version": "0.0.2",
-  "description": "components",
-  "main": "es/index.js",
-  "module": "es/index.js",
-  "types": "es/index.d.ts",
-  "files": [
-    "es"
-  ],
+  "version": "0.0.3",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "rollup -c ./rollup.config.js"
+    "start": "dumi dev",
+    "docs:build": "dumi build",
+    "docs:deploy": "gh-pages -d docs-dist",
+    "build": "father build",
+    "deploy": "npm run docs:build && npm run docs:deploy",
+    "prettier": "prettier --write \"**/*.{js,jsx,tsx,ts,less,md,json}\"",
+    "test": "umi-test",
+    "test:coverage": "umi-test --coverage",
+    "prepublishOnly": "npm run build"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/SeeTheNight/zx-components.git"
-  },
-  "keywords": [
-    "react",
-    "components",
-    "typescript",
-    "javascript"
+  "files": [
+    "dist"
   ],
-  "author": {
-    "name": "Zhang X",
-    "email": "1345306401@qq.com"
+  "module": "dist/esm/index.js",
+  "typings": "dist/esm/index.d.ts",
+  "main": "dist/esm/index.js",
+  "gitHooks": {
+    "pre-commit": "lint-staged"
   },
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/SeeTheNight/zx-components/issues"
+  "lint-staged": {
+    "*.{js,jsx,less,md,json}": [
+      "prettier --write"
+    ],
+    "*.ts?(x)": [
+      "prettier --parser=typescript --write"
+    ]
   },
-  "homepage": "https://github.com/SeeTheNight/zx-components#readme",
   "devDependencies": {
-    "@rollup/plugin-commonjs": "^22.0.2",
-    "@rollup/plugin-node-resolve": "^14.1.0",
-    "@rollup/plugin-strip": "^2.1.0",
-    "@rollup/plugin-typescript": "^8.5.0",
-    "@types/react": "^18.0.21",
-    "autoprefixer": "^10.4.12",
-    "react": "^18.2.0",
-    "rollup-plugin-node-externals": "^5.0.0",
-    "rollup-plugin-postcss": "^4.0.2",
-    "tslib": "^2.4.0"
+    "@testing-library/jest-dom": "^5.15.1",
+    "@testing-library/react": "^13.0.0",
+    "@types/jest": "^27.0.3",
+    "@umijs/fabric": "^2.8.1",
+    "@umijs/plugin-sass": "^1.1.1",
+    "@umijs/test": "^3.0.5",
+    "dumi": "^1.1.0",
+    "father": "^4.0.0-rc.2",
+    "gh-pages": "^3.0.0",
+    "lint-staged": "^10.0.7",
+    "prettier": "^2.2.1",
+    "react": "^18.0.0",
+    "yorkie": "^2.0.0"
   }
 }
