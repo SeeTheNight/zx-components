@@ -5,3 +5,4 @@ src/
 .umirc.ts
 .tsconfig.json
 typings.d.ts
+README.md
